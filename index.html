@@ -181,6 +181,15 @@
                 display: none;
             }
         }
+        .terms-textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.5;
+            resize: vertical;
+        }
     </style>
 </head>
 <body>
@@ -214,29 +223,35 @@
 
         <div class="grid">
             <div class="field">
-                <label data-en="Customer Name" data-zh="客戶名稱">客戶名稱</label>
-                <input type="text" value="台北市電腦商業同業公會">
+                <label data-en="Customer ID" data-zh="客戶編號">客戶編號</label>
+                <input type="text">
             </div>
             <div class="field">
-                <label data-en="Tax ID" data-zh="統一編號">統一編號</label>
-                <input type="text" value="04170821">
+                <label data-en="Customer Name" data-zh="客戶名稱">客戶名稱</label>
+                <input type="text" value="台北市電腦商業同業公會">
             </div>
         </div>
 
         <div class="grid">
             <div class="field">
+                <label data-en="Tax ID" data-zh="統一編號">統一編號</label>
+                <input type="text" value="04170821">
+            </div>
+            <div class="field">
                 <label data-en="Contact Person" data-zh="聯絡人">聯絡人</label>
                 <input type="text">
             </div>
+        </div>
+
+        <div class="grid">
             <div class="field">
                 <label data-en="Contact Phone" data-zh="聯絡電話">聯絡電話</label>
                 <input type="tel">
             </div>
-        </div>
-
-        <div class="field">
-            <label data-en="Email" data-zh="電子郵件">電子郵件</label>
-            <input type="email">
+            <div class="field">
+                <label data-en="Email" data-zh="電子郵件">電子郵件</label>
+                <input type="email">
+            </div>
         </div>
 
         <div class="field">
@@ -286,7 +301,7 @@
 
         <div class="remarks">
             <label data-en="Remarks" data-zh="備註及說明">備註及說明</label>
-            <textarea id="remarks-text" readonly class="remarks-textarea">1. 如有任何產品品質或數量不符之情況，請在收到商品後的30天內提出申請。 買方應在訂單處理前將簽署的發票以電子郵件寄回給我們。
+            <textarea id="remarks-text" class="remarks-textarea">1. 如有任何產品品質或數量不符之情況，請在收到商品後的30天內提出申請。 買方應在訂單處理前將簽署的發票以電子郵件寄回給我們。
 
 2. 收到報價單後，請將簽名的副本以電子郵件發送給我們
 
@@ -309,8 +324,8 @@
 4. As stated in the payment section, 30% should be paid in advance as a deposit.</div>
         </div>
         <div class="signature-section" style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
-            <div class="grid">
-                <div class="field">
+            <div class="grid" style="justify-content: center;">
+                <div class="field" style="text-align: center; width: 300px;">
                     <label data-en="Customer Signature" data-zh="客戶簽名">客戶簽名</label>
                     <div style="border: 1px solid #ddd; height: 100px; border-radius: 4px; margin-top: 8px;"></div>
                     <div style="margin-top: 8px; display: flex; justify-content: space-between;">
@@ -338,6 +353,7 @@
         </div>
     </div>
     
+
     <script>
         // Function to add new row
         function addNewRow() {
@@ -406,14 +422,21 @@
                 element.textContent = element.getAttribute('data-' + lang);
             });
             
-            // Update remarks based on language
+            // Update remarks based on language only if the content hasn't been edited
             const remarksText = document.getElementById('remarks-text');
-            const remarksContent = document.getElementById('remarks-' + lang).textContent;
-            remarksText.value = remarksContent;
+            if (!remarksText.dataset.edited) {
+                const remarksContent = document.getElementById('remarks-' + lang).textContent;
+                remarksText.value = remarksContent;
+            }
 
             const remarkPlaceholder = lang === 'en' ? 'Enter remarks here...' : '在此輸入備註...';
-            document.querySelector('textarea').placeholder = remarkPlaceholder;
+            remarksText.placeholder = remarkPlaceholder;
         }
+
+        // Add event listener to track edits
+        document.getElementById('remarks-text').addEventListener('input', function() {
+            this.dataset.edited = 'true';
+        });
     </script>
 </body>
 </html>
