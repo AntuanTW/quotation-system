@@ -348,6 +348,7 @@ class="logo">
 </div>
 </div>
 
+<<<<<<< HEAD
 <div class="company-info" style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; font-size: 14px; line-height: 1.8;">
 <div class="en-info" style="display: none;" data-lang="en">
 <div style="font-weight: 600;">Antoine Sylvestre | CEO</div>
@@ -363,6 +364,41 @@ class="logo">
 </div>
 </div>
 </div>
+=======
+    <div class="company-info" style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; font-size: 14px; line-height: 1.8;">
+        <div class="en-info" style="display: none;" data-lang="en">
+                <div style="font-weight: 600;">Antoine Sylvestre | CEO</div>
+                <div>Kiara World Corp.</div>
+                <div>10595 Taipei City, Songshan District, Fuxing North Road, 57, 14F-3</div>
+                <div>TEL: +886 989-433-321</div>
+            </div>
+            <div class="zh-info" data-lang="zh">
+                <div style="font-weight: 600;">史安湍 | 總經理</div>
+                <div>晨躍國際股份有限公司</div>
+                <div>10595臺北松山區復興北路57號14樓之3</div>
+                <div>TEL: +886 989-433-321</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Function to add new row
+        function addNewRow() {
+            const tbody = document.querySelector('#itemsTable tbody');
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td><input type="text" class="description-input"></td>
+                <td><input type="number" class="quantity-input" min="0" step="1"></td>
+                <td><input type="number" class="price-input" min="0" step="0.01"></td>
+                <td class="amount-column amount-display">0.00</td>
+                <td class="no-print">
+                    <button class="remove-button" onclick="removeRow(this)" data-en="Remove" data-zh="刪除">刪除</button>
+                </td>
+            `;
+            tbody.appendChild(newRow);
+            attachRowListeners(newRow);
+        }
+>>>>>>> parent of 6036e04 (Update index.html)
 
 
 <script>
