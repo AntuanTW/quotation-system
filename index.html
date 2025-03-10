@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>報價單</title>
+<title>Kiara Quotation</title>
 <style>
 body {
 font-family: system-ui, -apple-system, sans-serif;
@@ -213,7 +213,7 @@ class="logo">
 <div class="grid">
 <div class="field">
 <label data-en="Date" data-zh="日期">日期</label>
-<input type="date" value="2025-02-24">
+<input type="date" id="currentDate">
 </div>
 <div class="field">
 <label data-en="Quotation #" data-zh="報價編號">報價編號</label>
@@ -222,44 +222,36 @@ class="logo">
 </div>
 
 <div class="grid">
-            <div class="field">
-                <label data-en="Customer ID" data-zh="客戶編號">客戶編號</label>
-                <input type="text">
-            </div>
+<div class="field">
+<label data-en="Customer ID" data-zh="客戶編號">客戶編號</label>
+<input type="text">
+</div>
 <div class="field">
 <label data-en="Customer Name" data-zh="客戶名稱">客戶名稱</label>
 <input type="text" value="台北市電腦商業同業公會">
 </div>
-        </div>
+</div>
 
-        <div class="grid">
+<div class="grid">
 <div class="field">
 <label data-en="Tax ID" data-zh="統一編號">統一編號</label>
 <input type="text" value="04170821">
 </div>
-        </div>
-
-        <div class="grid">
 <div class="field">
 <label data-en="Contact Person" data-zh="聯絡人">聯絡人</label>
 <input type="text">
 </div>
-        </div>
+</div>
 
-        <div class="grid">
+<div class="grid">
 <div class="field">
 <label data-en="Contact Phone" data-zh="聯絡電話">聯絡電話</label>
 <input type="tel">
 </div>
-        </div>
-
-        <div class="field">
-            <label data-en="Email" data-zh="電子郵件">電子郵件</label>
-            <input type="email">
-            <div class="field">
-                <label data-en="Email" data-zh="電子郵件">電子郵件</label>
-                <input type="email">
-            </div>
+<div class="field">
+<label data-en="Email" data-zh="電子郵件">電子郵件</label>
+<input type="email">
+</div>
 </div>
 
 <div class="field">
@@ -309,8 +301,7 @@ class="logo">
 
 <div class="remarks">
 <label data-en="Remarks" data-zh="備註及說明">備註及說明</label>
-            <textarea id="remarks-text" readonly class="remarks-textarea">1. 如有任何產品品質或數量不符之情況，請在收到商品後的30天內提出申請。 買方應在訂單處理前將簽署的發票以電子郵件寄回給我們。
-            <textarea id="remarks-text" class="remarks-textarea">1. 如有任何產品品質或數量不符之情況，請在收到商品後的30天內提出申請。 買方應在訂單處理前將簽署的發票以電子郵件寄回給我們。
+<textarea id="remarks-text" class="remarks-textarea">1. 如有任何產品品質或數量不符之情況，請在收到商品後的30天內提出申請。 買方應在訂單處理前將簽署的發票以電子郵件寄回給我們。
 
 2. 收到報價單後，請將簽名的副本以電子郵件發送給我們
 
@@ -332,162 +323,142 @@ class="logo">
 
 4. As stated in the payment section, 30% should be paid in advance as a deposit.</div>
 </div>
+
 <div class="signature-section" style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
-            <div class="grid">
-                <div class="field">
-            <div class="grid" style="justify-content: center;">
-                <div class="field" style="text-align: center; width: 300px;">
+<div class="grid" style="justify-content: center;">
+<div class="field" style="text-align: center; width: 300px;">
 <label data-en="Customer Signature" data-zh="客戶簽名">客戶簽名</label>
 <div style="border: 1px solid #ddd; height: 100px; border-radius: 4px; margin-top: 8px;"></div>
-<div style="margin-top: 8px; display: flex; justify-content: space-between;">
-<span data-en="Name" data-zh="姓名">姓名</span>
-<span data-en="Date" data-zh="日期">日期</span>
-</div>
+<div style="margin-top: 15px; display: flex; justify-content: space-between;">
+<span data-en="Name: ________" data-zh="姓名: ________">姓名: ________</span>
+<span data-en="Date: ________" data-zh="日期: ________">日期: ________</span>
 </div>
 </div>
 </div>
 </div>
 
-<<<<<<< HEAD
 <div class="company-info" style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; font-size: 14px; line-height: 1.8;">
 <div class="en-info" style="display: none;" data-lang="en">
-<div style="font-weight: 600;">Antoine Sylvestre | CEO</div>
 <div>Kiara World Corp.</div>
 <div>10595 Taipei City, Songshan District, Fuxing North Road, 57, 14F-3</div>
-<div>TEL: +886 989-433-321</div>
+<div>VAT Number: 00115766</div>
+<div><a href="mailto:contact@kiara.world">contact@kiara.world</a></div>
 </div>
 <div class="zh-info" data-lang="zh">
-<div style="font-weight: 600;">史安湍 | 總經理</div>
 <div>晨躍國際股份有限公司</div>
 <div>10595臺北松山區復興北路57號14樓之3</div>
-<div>TEL: +886 989-433-321</div>
+<div>統一編號: 00115766</div>
+<div><a href="mailto:contact@kiara.world">contact@kiara.world</a></div>
 </div>
 </div>
-</div>
-=======
-    <div class="company-info" style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; font-size: 14px; line-height: 1.8;">
-        <div class="en-info" style="display: none;" data-lang="en">
-                <div style="font-weight: 600;">Antoine Sylvestre | CEO</div>
-                <div>Kiara World Corp.</div>
-                <div>10595 Taipei City, Songshan District, Fuxing North Road, 57, 14F-3</div>
-                <div>TEL: +886 989-433-321</div>
-            </div>
-            <div class="zh-info" data-lang="zh">
-                <div style="font-weight: 600;">史安湍 | 總經理</div>
-                <div>晨躍國際股份有限公司</div>
-                <div>10595臺北松山區復興北路57號14樓之3</div>
-                <div>TEL: +886 989-433-321</div>
-            </div>
-        </div>
-    </div>
-    
-    <script>
-        // Function to add new row
-        function addNewRow() {
-            const tbody = document.querySelector('#itemsTable tbody');
-            const newRow = document.createElement('tr');
-            newRow.innerHTML = `
-                <td><input type="text" class="description-input"></td>
-                <td><input type="number" class="quantity-input" min="0" step="1"></td>
-                <td><input type="number" class="price-input" min="0" step="0.01"></td>
-                <td class="amount-column amount-display">0.00</td>
-                <td class="no-print">
-                    <button class="remove-button" onclick="removeRow(this)" data-en="Remove" data-zh="刪除">刪除</button>
-                </td>
-            `;
-            tbody.appendChild(newRow);
-            attachRowListeners(newRow);
-        }
->>>>>>> parent of 6036e04 (Update index.html)
-
 
 <script>
 // Function to add new row
 function addNewRow() {
-const tbody = document.querySelector('#itemsTable tbody');
-const newRow = document.createElement('tr');
-newRow.innerHTML = `
-               <td><input type="text" class="description-input"></td>
-               <td><input type="number" class="quantity-input" min="0" step="1"></td>
-               <td><input type="number" class="price-input" min="0" step="0.01"></td>
-               <td class="amount-column amount-display">0.00 TWD</td>
-               <td class="no-print">
-                   <button class="remove-button" onclick="removeRow(this)" data-en="Remove" data-zh="刪除">刪除</button>
-               </td>
-           `;
-tbody.appendChild(newRow);
-attachRowListeners(newRow);
+    const tbody = document.querySelector('#itemsTable tbody');
+    const newRow = document.createElement('tr');
+    newRow.innerHTML = `
+        <td><input type="text" class="description-input"></td>
+        <td><input type="number" class="quantity-input" min="0" step="1"></td>
+        <td><input type="number" class="price-input" min="0" step="0.01"></td>
+        <td class="amount-column amount-display">0.00 TWD</td>
+        <td class="no-print">
+            <button class="remove-button" onclick="removeRow(this)" data-en="Remove" data-zh="刪除">刪除</button>
+        </td>
+    `;
+    tbody.appendChild(newRow);
+    attachRowListeners(newRow);
 }
 
 // Function to remove row
 function removeRow(button) {
-const row = button.closest('tr');
-row.remove();
-updateTotals();
+    const row = button.closest('tr');
+    row.remove();
+    updateTotals();
 }
 
 // Function to attach listeners to a row
 function attachRowListeners(row) {
-const qtyInput = row.querySelector('.quantity-input');
-const priceInput = row.querySelector('.price-input');
+    const qtyInput = row.querySelector('.quantity-input');
+    const priceInput = row.querySelector('.price-input');
 
-qtyInput.addEventListener('input', () => updateRow(row));
-priceInput.addEventListener('input', () => updateRow(row));
+    qtyInput.addEventListener('input', () => updateRow(row));
+    priceInput.addEventListener('input', () => updateRow(row));
 }
 
 // Function to update a single row
 function updateRow(row) {
-const qty = parseFloat(row.querySelector('.quantity-input').value) || 0;
-const price = parseFloat(row.querySelector('.price-input').value) || 0;
-const amount = qty * price;
-row.querySelector('.amount-display').textContent = amount.toFixed(2) + ' TWD';
-updateTotals();
+    const qty = parseFloat(row.querySelector('.quantity-input').value) || 0;
+    const price = parseFloat(row.querySelector('.price-input').value) || 0;
+    const amount = qty * price;
+    row.querySelector('.amount-display').textContent = amount.toFixed(2) + ' TWD';
+    updateTotals();
 }
 
 // Function to update totals
 function updateTotals() {
-const amounts = Array.from(document.querySelectorAll('.amount-display'))
-.map(cell => parseFloat(cell.textContent) || 0);
+    const amounts = Array.from(document.querySelectorAll('.amount-display'))
+        .map(cell => parseFloat(cell.textContent) || 0);
 
-const subtotal = amounts.reduce((sum, amount) => sum + amount, 0);
-const tax = subtotal * 0.05;
-const total = subtotal + tax;
+    const subtotal = amounts.reduce((sum, amount) => sum + amount, 0);
+    const tax = subtotal * 0.05;
+    const total = subtotal + tax;
 
-document.querySelector('.subtotal-display').textContent = subtotal.toFixed(2) + ' TWD';
-document.querySelector('.tax-display').textContent = tax.toFixed(2) + ' TWD';
-document.querySelector('.total-display').textContent = total.toFixed(2) + ' TWD';
+    document.querySelector('.subtotal-display').textContent = subtotal.toFixed(2) + ' TWD';
+    document.querySelector('.tax-display').textContent = tax.toFixed(2) + ' TWD';
+    document.querySelector('.total-display').textContent = total.toFixed(2) + ' TWD';
 }
 
 // Initialize existing rows
 document.querySelectorAll('#itemsTable tbody tr').forEach(row => {
-attachRowListeners(row);
+    attachRowListeners(row);
 });
 
 // Language switching
 function changeLanguage(lang) {
-document.querySelectorAll('[data-' + lang + ']').forEach(element => {
-element.textContent = element.getAttribute('data-' + lang);
-});
+    // Update text elements with data attributes
+    document.querySelectorAll('[data-' + lang + ']').forEach(element => {
+        element.textContent = element.getAttribute('data-' + lang);
+    });
+    
+    // Update placeholders with data attributes
+    document.querySelectorAll('[data-' + lang + '-placeholder]').forEach(element => {
+        element.placeholder = element.getAttribute('data-' + lang + '-placeholder');
+    });
 
-            // Update remarks based on language
-            // Update remarks based on language only if the content hasn't been edited
-const remarksText = document.getElementById('remarks-text');
-            const remarksContent = document.getElementById('remarks-' + lang).textContent;
-            remarksText.value = remarksContent;
-            if (!remarksText.dataset.edited) {
-                const remarksContent = document.getElementById('remarks-' + lang).textContent;
-                remarksText.value = remarksContent;
-            }
+    // Update remarks based on language only if the content hasn't been edited
+    const remarksText = document.getElementById('remarks-text');
+    if (!remarksText.dataset.edited) {
+        const remarksContent = document.getElementById('remarks-' + lang).textContent;
+        remarksText.value = remarksContent;
+    }
 
-const remarkPlaceholder = lang === 'en' ? 'Enter remarks here...' : '在此輸入備註...';
-            document.querySelector('textarea').placeholder = remarkPlaceholder;
-            remarksText.placeholder = remarkPlaceholder;
+    // Show/hide language-specific elements
+    document.querySelectorAll('[data-lang]').forEach(element => {
+        if (element.getAttribute('data-lang') === lang) {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    });
 }
 
-        // Add event listener to track edits
-        document.getElementById('remarks-text').addEventListener('input', function() {
-            this.dataset.edited = 'true';
-        });
+// Add event listener to track edits
+document.getElementById('remarks-text').addEventListener('input', function() {
+    this.dataset.edited = 'true';
+});
+
+// Set current date
+document.addEventListener('DOMContentLoaded', function() {
+    // Set today's date
+    const today = new Date();
+    const formattedDate = today.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+    document.getElementById('currentDate').value = formattedDate;
+    
+    // Initialize language
+    const defaultLang = document.querySelector('.language-select').value;
+    changeLanguage(defaultLang);
+});
 </script>
 </body>
 </html>
